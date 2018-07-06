@@ -1,0 +1,15 @@
+pipeline {
+	agent any
+	
+	stages {
+		stage ('Compilação') {
+			
+			steps {
+				withMaven(maven : 'MAVEN_3_5_4') {
+					sh 'mvn clean compile'
+				}
+			}
+		}
+	}
+
+}
