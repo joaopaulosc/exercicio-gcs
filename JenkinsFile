@@ -2,7 +2,7 @@ pipeline {
 	agent any
 	
 	stages {
-		stage ('Compilação') {
+		stage ('Gerando a build...') {
 			steps {
 				withMaven(maven: 'MAVEN_3_5_4') {
 					bat 'mvn clean install'
@@ -12,10 +12,7 @@ pipeline {
 		
 		stage ('Deploy') {
 			steps {
-				bat 'set > env.txt'
-				for (String i : readFile('env.txt').split("\r?\n")) {
- 			    	println i
-				}
+				echo 'Copiando arquivo'
 			}
 		}
 	}
