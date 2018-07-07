@@ -3,15 +3,14 @@ pipeline {
 	
 	stages {
 		stage ('Compilação') {
-			
 			steps {
 				withMaven(maven: 'MAVEN_3_5_4') {
-					sh 'mvn clean install'
+					echo 'compilaçao...'
 				}
 			}
 		}
-		stage ('Deply') {
-			
+		
+		stage ('Deploy') {
 			steps {
 				echo 'Copiando arquivo'
 			}
