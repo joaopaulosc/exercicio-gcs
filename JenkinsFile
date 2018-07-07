@@ -6,8 +6,14 @@ pipeline {
 			
 			steps {
 				withMaven(maven: 'MAVEN_3_5_4') {
-					sh 'mvn clean test'
+					sh 'mvn clean install'
 				}
+			}
+		}
+		stage ('Deply') {
+			
+			steps {
+				echo 'Copiando arquivo'
 			}
 		}
 	}
