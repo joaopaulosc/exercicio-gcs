@@ -5,7 +5,7 @@ pipeline {
 		stage ('Compilação') {
 			
 			steps {
-				echo 'mvn clean compile'
+				mvn clean compile
 			}
 		}
 	}
