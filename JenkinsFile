@@ -12,7 +12,7 @@ pipeline {
 		
 		stage ('Deploy') {
 			steps {
-				echo 'Copiando arquivo'
+				echo ${WORKSPACE}
 			}
 		}
 	}
