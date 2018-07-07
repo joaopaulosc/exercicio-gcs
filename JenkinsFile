@@ -12,7 +12,7 @@ pipeline {
 		
 		stage ('Deploy') {
 			when {
-				stage 'Compilação'
+				{ stage 'Compilação' }
 			}
 			steps {
 				echo 'Copiando arquivo'
