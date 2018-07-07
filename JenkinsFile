@@ -12,7 +12,10 @@ pipeline {
 		
 		stage ('Deploy') {
 			steps {
-				echo ${WORKSPACE}
+				bat 'set > env.txt'
+				for (String i : readFile('env.txt').split("\r?\n")) {
+ 			    	println i
+				}
 			}
 		}
 	}
