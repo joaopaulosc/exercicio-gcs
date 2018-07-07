@@ -11,6 +11,9 @@ pipeline {
 		}
 		
 		stage ('Deploy') {
+			when {
+				stage 'Compilação'
+			}
 			steps {
 				echo 'Copiando arquivo'
 			}
